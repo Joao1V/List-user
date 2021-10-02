@@ -8,8 +8,8 @@
          <input class="container border border-black" type="email" placeholder="E-mail">
        </div>
        <div class="flex flex-1 justify-end text-base mt-40 ">
-        <AppButon class="text-green-500 hover:bg-green-500 hover:text-white">Salvar</AppButon>
-        <AppButon class="text-red-500 hover:bg-red-500 hover:text-white" @click="close">Fechar</AppButon>
+        <AppButton class="text-green-500 hover:bg-green-500 hover:text-white">Salvar</AppButton>
+        <AppButton class="text-red-500 hover:bg-red-500 hover:text-white" @click="$emit('close')">Fechar</AppButton>
        </div>
     </div>
    
@@ -18,25 +18,24 @@
 </template>
 
 <script setup>
-import AppButon from "./AppButton.vue"
+import AppButton from "./AppButton.vue"
 </script>
 
 <script>
 export default {
+  props: ["show"],
+
   data() {
     return{
-      show: true
+      
     }
   },
   methods: {
-     open () {
-        this.show = true
-        console.log("chamou open");
-      },
-    close(){
-      this.show = false
-      console.log("chamou close");
-    }
+     
+    // close(){
+    //   this.show = false
+    //   console.log("chamou close");
+    // },
    
     
   },

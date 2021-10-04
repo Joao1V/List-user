@@ -32,11 +32,6 @@ export default {
   },
   methods: {
      
-    // close(){
-    //   this.show = false
-    //   console.log("chamou close");
-    // },
-   
     
   },
 };

@@ -1,5 +1,9 @@
 <template>
-  <AppDados @close="close" :show="show"></AppDados>
+  <AppDados @saved="saved" @close="close" :show="show"></AppDados>
+  <!-- <input type="text" v-model="descricao.nome">
+  <div class="text-white">{{ descricao.nome }}</div>
+  <input type="text" v-model="descricao.data">
+  <div class="text-white">{{ descricao.data }}</div> -->
   <div>
     <h1 class="text-5xl text-white text-center mt-10">List User</h1>
     <div>
@@ -48,6 +52,7 @@
         </tr>
       </tbody>
     </table>
+    <div>{{users}}</div>
   </div>
 </template>
 
@@ -62,6 +67,7 @@ export default {
   data() {
     return {
       show: false,
+      users: []
     };
   },
   methods: {
@@ -73,6 +79,10 @@ export default {
       this.show = false;
       console.log("chamou close");
     },
+    saved(user){
+     this.users.push(user)
+     
+    }
   },
 };
 </script>
